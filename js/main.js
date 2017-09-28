@@ -64,40 +64,49 @@
     };
 
     var speeds = {
-        "very fast":0x00323530,
-        "fast":0x00353030,
-        "normal":0x31303030,
+        "very fast":0x00373030,
+        "fast":0x00393030,
+        "normal":0x31323530,
         "slow":0x32303030,
         "very slow": 0x34303030
     }
 
 	ext.resetAll = function(){};
 	
-	ext.runArduino = function(){
-		
-	};
+	ext.runArduino = function(){};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ext.move = function(action, speed) {
         action = actions[action];
         speed = speeds[speed];
+		//var timeout = speed; 
+		
         // Cmd: M actionCode speed
+	  _rxBuf = [];  //clear buffer	 
       device.send([0x4D, 0x20, action >> 8, action, 0x20, speed >> 24, speed >> 16, speed >> 8, speed,  0x20, 0x0D, 0x0A]);
 	  //device.send([0x4D, 0x20, action, 0x20, speed >> 24, speed >> 16, speed >> 8, speed,  0x20, 0x0D, 0x0A]);
 	  // device.send([0x4D, 0x20, 0x30 ,0x20, 0x0D, 0x0A]);
 	 // while (_ack == false) ; //note: add time out processing
-	  _ack = false;
+	 var str = String.fromCharCode(speed>>24, (speed&0x00ff0000)>>16, (speed&0x0000ff00)>>8,speed&0x000000ff);
+     var timeout = parseInt(str);	
+	 //console.log (timeout); 
+	 wait(timeout); 
+	 // _ack = false;
     };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
     ext.gesture = function(gesture) {
         gesture = gestures[gesture];
         // Cmd: H gestureCode
         device.send([0x48, 0x20, gesture >> 8, gesture, 0x0D, 0x0A]);
+			 wait(1000);
+
     };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ext.sing = function(song) {
         song = songs[song];
         // Cmd: K songCode
         device.send([0x4B, 0x20, song >> 8, song, 0x0D, 0x0A]);
+			 wait(1000);
+
     };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
@@ -155,7 +164,7 @@ function processData(bytes) {
 					
 					}
 					
-					_rxBuf = [];
+					_rxBuf = []; //clear buffer
 				}
 			} 
 		}
@@ -167,7 +176,17 @@ function processData(bytes) {
 			result |= arr[position+i] << (i << 3);
 		}
 		return result;
+		
 	}
+//////////////////////////////////////////////////////////////////////
+   	
+///////////////////////////////////////////////////////////////////////////////////////////////////
+function  wait(timeout) {
+	window.setTimeout(function(){
+		},timeout);
+
+};
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Extension API interactions
     var potentialDevices = [];
