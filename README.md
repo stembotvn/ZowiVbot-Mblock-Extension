@@ -7,9 +7,9 @@ Zowi-Vbot Extension do STEMbot phát triển để có thể lập trình cho Ro
 Hiện tại ZowiVbot Extension chỉ hỗ trợ chế độ Scratch Mode (có thể hiểu là Online mode), hỗ trợ chạy chương trình Scratch trên Mblock và đồng bộ với Robot, có nghĩa là Mblock trên PC phải luôn chạy để Robot hoạt động, bộ não Robot lúc này là Mblock. 
 
 ## Cách cài đặt
-1 - Dowload Extension với định dạng nén .Zip file về máy tính. 
-2 - Mở phần mềm Mblock, vào tab Extensions/Manage Extensions -> Bấm "Add Extension" -> Chọn đường dẫn tới file Zip vừa download, chú ý chọn loại file là Zip để Extension xuất hiện trên màn hình tìm kiếm Extension. 
-3 - Test chương trình 
+* Dowload Extension với định dạng nén .Zip file về máy tính. 
+* Mở phần mềm Mblock, vào tab Extensions/Manage Extensions -> Bấm "Add Extension" -> Chọn đường dẫn tới file Zip vừa download, chú ý chọn loại file là Zip để Extension xuất hiện trên màn hình tìm kiếm Extension. 
+* Test chương trình 
 ## Hoạt động
 ZowiVbot hỗ trợ 2 chế độ kết nối với Mblock là Serial via USB và Bluetooth
 1. Serial Connection:
