@@ -109,8 +109,7 @@
 
     };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
-	//////////////////////////////////////////
+//////////////////////////////////////////
    var _isParseStart = false;
 	var _isParseStartIndex = 0;
 	var _isAck = false; 
@@ -155,7 +154,7 @@ function processData(bytes) {
 					else if (extId == 0x46){ //if receive  'F' character -> Final Acknowledge 
 						// i do not know what to do; 
 					}
-					else 
+					else if (extID == 0x44)   // if receive 'D' character -> get the Distance from SRF04 Sensor
 					{
 					position++;
 					_Rval = readInt(_rxBuf,position,2);

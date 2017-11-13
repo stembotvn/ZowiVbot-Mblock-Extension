@@ -1,9 +1,9 @@
 {	
 	"extensionName": "ZowiVbot",
-	"description": "Scratch Extension for Zowi-Vbot Robot",
+	"description": "Scratch Mode Only Zowi-Vbot Robot",
 	"version": "1.0",
 	"author": "Hien Phan",
-	"homepage": "http://stembot.vn",
+	"homepage": "http://stembot.vn/zowivbot",
 	"sort":0,
 	"javascriptURL":"js/main.js",
   	"firmware":"1.0",
