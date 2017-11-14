@@ -15,6 +15,7 @@ Hiện tại ZowiVbot Extension chỉ hỗ trợ chế độ Scratch Mode (có t
 * Mở phần mềm Mblock, vào tab Extensions/Manage Extensions -> Bấm "Add Extension" -> Chọn đường dẫn tới file Zip vừa download, chú ý chọn loại file là Zip để Extension xuất hiện trên màn hình tìm kiếm Extension. 
 * Test chương trình 
 ## Hoạt động
+### Kết nối
 ZowiVbot hỗ trợ 2 chế độ kết nối với Mblock là Serial via USB và Bluetooth
 1. Serial Connection:
    * Bật nguồn cho Robot, đảm bảo Pin đầy để hoạt động
@@ -27,9 +28,24 @@ ZowiVbot hỗ trợ 2 chế độ kết nối với Mblock là Serial via USB v�
  * Bật Bluetooth lên và Pair với Robot, chú ý, tên Device hiển thị là Zowi, các bạn có thể Pair lần đầu và sau đó đổi tên tùy ý, mật khẩu để Pair là 1234
  * Vào Connect/Bluetooth: chọn device vừa Pair là (Zowi với địa chỉ kèm theo dạng aa:bb:cc:dd:ee:ff) và bấm connect 
  * Nếu kết nối thành công, lập trình giống như với Serial Connection. 
- 
+ ### Chạy chương trình
+    Extension hỗ trợ cả chế độ Scratch mode và Arduino Mode
+ #### Scratch Mode 
+     Scratch Mode là chế độ chạy chương trình Robot ngay trên máy tính, Robot sẽ nhận lệnh từng từ Scratch và thực thi gần như song song: 
+     - Ưu điểm là chạy chương trình ngay lập tức mà không phải biên dịch
+     - Nhược điểm là Robot chỉ hoạt động khi phần mềm mBlock chạy và phải đảm bảo Robot và máy tính luôn được kết nối  
+     Để sử dụng Scratch Mode, Robot phải được nạp trước Firmware trong Examples của thư viện ZowiVbot trong Arduino IDE
+     (Xem chi tiết cài thư viện Arduino ở đây: https://github.com/stembotvn/ZowiVbot)
+ - Scratch Mode có dây USB: Nạp chương trình "Vbot_InScratchMode_Serial.ino"
+ - Scratch Mode với Bluetooth: Nạp chương trình "Vbot_BT_ZowiAPP.ino"
+ #### Arduino Mode
+     Chế độ Arduino mode ta vào mBlock-> Edit/Arduino Mode, Các lệnh Scratch sẽ được dịch qua Arduino code.
+     - Chọn Connect/Serial -> Chọn đúng cổng Serial của Robot
+     - Chọn Board/Nano 328 
+     - Bấm Upload Code to Arduinno để chạy chương trình, lúc này Robot có thể tự hoạt động mà không cần máy tính.
+     - Lưu ý: Khi Upload Code to Arduino, Chức năng Scratch Mode sẽ không thể hoạt động trở lại cho đến khi sử dụng Arduino IDE upload lại Firmware tương thích Scratch Mode cho Robot
  ## Note
-   Khuyến nghị các bạn lập trình Scratch trên môi trường Mblock nên sử dụng cáp Serial, phiên bản Bluetooth hiện chưa được ổn đinh, chúng tôi sẽ khắc phục trong thời gian sớm nhất 
+   Khuyến nghị các bạn lập trình Scratch trên môi trường Mblock nên sử dụng cáp Serial, phiên bản Bluetooth hiện chưa được ổn đinh, nếu bị mất kết nối hoặc không thể kết nối trở lại, phải Restart mBLock software.
    
    Chúc các bạn thực hành vui vẻ với chú robot này
  
