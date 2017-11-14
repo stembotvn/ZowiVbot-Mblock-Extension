@@ -33,7 +33,7 @@ ZowiVbot hỗ trợ 2 chế độ kết nối với Mblock là Serial via USB v�
  ### Chạy chương trình
     Extension hỗ trợ cả chế độ Scratch mode và Arduino Mode
  #### Scratch Mode 
-     Scratch Mode là chế độ chạy chương trình Robot ngay trên máy tính, Robot sẽ nhận lệnh từng từ Scratch và thực thi gần như song song: 
+  Scratch Mode là chế độ chạy chương trình Robot ngay trên máy tính, Robot sẽ nhận lệnh từng từ Scratch và thực thi gần như song song: 
      - Ưu điểm là chạy chương trình ngay lập tức mà không phải biên dịch
      - Nhược điểm là Robot chỉ hoạt động khi phần mềm mBlock chạy và phải đảm bảo Robot và máy tính luôn được kết nối  
      Để sử dụng Scratch Mode, Robot phải được nạp trước Firmware trong Examples của thư viện ZowiVbot trong Arduino IDE
@@ -41,7 +41,7 @@ ZowiVbot hỗ trợ 2 chế độ kết nối với Mblock là Serial via USB v�
  - Scratch Mode có dây USB: Nạp chương trình "Vbot_InScratchMode_Serial.ino"
  - Scratch Mode với Bluetooth: Nạp chương trình "Vbot_BT_ZowiAPP.ino"
  #### Arduino Mode
-     Chế độ Arduino mode ta vào mBlock-> Edit/Arduino Mode, Các lệnh Scratch sẽ được dịch qua Arduino code.
+ Chế độ Arduino mode ta vào mBlock-> Edit/Arduino Mode, Các lệnh Scratch sẽ được dịch qua Arduino code.
      - Chọn Connect/Serial -> Chọn đúng cổng Serial của Robot
      - Chọn Board/Nano 328 
      - Bấm Upload Code to Arduinno để chạy chương trình, lúc này Robot có thể tự hoạt động mà không cần máy tính.
