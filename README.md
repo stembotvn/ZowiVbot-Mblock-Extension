@@ -5,6 +5,7 @@ Extension là tập hợp file cho phép cài đặt các Block cho các loại 
 
 Zowi-Vbot Extension do STEMbot phát triển để có thể lập trình cho Robot Zowi-Vbot để có thể chạy trên môi trường Mblock. 
 Hiện tại ZowiVbot Extension chỉ hỗ trợ chế độ Scratch Mode (có thể hiểu là Online mode), hỗ trợ chạy chương trình Scratch trên Mblock và đồng bộ với Robot, có nghĩa là Mblock trên PC phải luôn chạy để Robot hoạt động, bộ não Robot lúc này là Mblock. 
+http://stembot.vn/products/zowivbot
 
 ## Cách cài đặt
 
